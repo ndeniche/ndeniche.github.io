@@ -8,7 +8,43 @@ class App extends React.Component {
     super(props);
 
     this.state = {
-      events: {},
+      events: {
+        '0': {
+          date: new Date('08/06/2019'),
+          title: "Concierto Benéfico",
+          subtitle: "Elías Espinal - La Guagua - Indecentes - Linda Perdomo",
+          description: "A beneficio del pequeño Jonatan Reyes",
+          details: "7 PM Donación L100"
+        },
+        '1': {
+          date: new Date('08/07/2019'),
+          title: "Buscando a la Guzmán Hondureña",
+          subtitle: "Eliminatoria 1",
+          description: "Súper karaoke Go TV - Cantá y Ganá L. 10,000",
+          details: "9 PM Entrada Gratis"
+        },
+        '2': {
+          date: new Date('08/08/2019'),
+          title: "Concierto",
+          subtitle: "Bárbara Lavaire",
+          description: "y los Músicos Robados",
+          details: "9 PM Cover L100"
+        },
+        '3': {
+          date: new Date('08/09/2019'),
+          title: "Tributo",
+          subtitle: "Ricardo Arjona",
+          description: "Presenado por Acústikos",
+          details: "9 PM Cover L100"
+        },
+        '4': {
+          date: new Date('08/10/2019'),
+          title: "Tributo",
+          subtitle: "Foo Fighters y Nirvana",
+          description: "Presentado por Etherea",
+          details: "9 PM Cover L100"
+        },
+      },
     }
 
     this.handleEventAdd = this.handleEventAdd.bind(this);

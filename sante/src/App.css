@@ -60,4 +60,6 @@ li.event-add {
 
 #canvasPromo {
   border: solid 1px #000;
+  max-width: 100%;
+  width: 100%;
 }

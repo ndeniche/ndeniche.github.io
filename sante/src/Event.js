@@ -31,7 +31,7 @@ class Event extends React.Component {
     }
 
     componentDidMount() {
-        this.addEvent();
+        //this.addEvent();
     }
 
     addEvent() {
