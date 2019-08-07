@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/sante_build/static/css/main.558ae786.chunk.css",
+    "main.js": "/sante_build/static/js/main.e1401fec.chunk.js",
+    "main.js.map": "/sante_build/static/js/main.e1401fec.chunk.js.map",
+    "runtime~main.js": "/sante_build/static/js/runtime~main.fa4d45bb.js",
+    "runtime~main.js.map": "/sante_build/static/js/runtime~main.fa4d45bb.js.map",
+    "static/js/2.b9ef0144.chunk.js": "/sante_build/static/js/2.b9ef0144.chunk.js",
+    "static/js/2.b9ef0144.chunk.js.map": "/sante_build/static/js/2.b9ef0144.chunk.js.map",
+    "index.html": "/sante_build/index.html",
+    "precache-manifest.bd47509531376299f2f15037fb99a81e.js": "/sante_build/precache-manifest.bd47509531376299f2f15037fb99a81e.js",
+    "service-worker.js": "/sante_build/service-worker.js",
+    "static/css/main.558ae786.chunk.css.map": "/sante_build/static/css/main.558ae786.chunk.css.map"
+  }
+}
