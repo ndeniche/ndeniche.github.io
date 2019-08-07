@@ -10,10 +10,11 @@ class Promo extends React.Component {
             events: props.events
         }
 
-        this.totalHeight = 600;
-        this.y = 200;
-        this.x = 50;
-        this.eHeight = 80;
+        this.canvasSize = 400;
+        this.totalHeight = this.canvasSize * .75;
+        this.y = this.canvasSize * .25;
+        this.x = this.canvasSize * .12;
+        this.eHeight = this.canvasSize * .1;
 
         this.draw = this.draw.bind(this);
         this.getProperties = this.getProperties.bind(this);
@@ -21,7 +22,7 @@ class Promo extends React.Component {
 
     getProperties() {
         return {
-            padding: (this.totalHeight - (80 * Object.keys(this.state.events).length))/5,
+            padding: (this.totalHeight - (this.eHeight * Object.keys(this.state.events).length))/5,
         };
     }
 
@@ -29,34 +30,37 @@ class Promo extends React.Component {
         var ctx = document.getElementById('canvasPromo').getContext('2d');
 
         ctx.fillStyle = 'rgb(0,0,0)';
-        ctx.fillRect(0,0,800,800);
+        ctx.fillRect(0,0,this.canvasSize,this.canvasSize);
 
         var {padding} = this.getProperties();
 
         var img = new Image();
+        var cs = this.canvasSize;
         img.onload = function() {
-            ctx.drawImage(img, 140, 10);
+            var propx = 520/800,
+                propy = 100/800,
+                sizex = propx * cs,
+                sizey = propy * cs;
+            ctx.drawImage(img, (cs - sizex)/2, (cs/100), sizex, sizey);
+            ctx.fill();
         };
         img.src = process.env.PUBLIC_URL + '/logo.png';
 
         Object.keys(this.state.events).forEach((c,i) => {
             let e = this.state.events[c];
-            ctx.font = '42px serif';
+            ctx.font = (this.canvasSize * 0.05) + 'px serif';
             ctx.fillStyle = 'rgb(255,255,255)';
             ctx.fillText(e.title, this.x, (this.y + (i * this.eHeight) + (i * padding)));
-            console.log('title: ' + e.title + ', x: ' + this.x + ', y: ' + (this.y + (i * this.eHeight) + (i * padding)));
         });
 
         ctx.fill();
-
-        console.log(this.state.events);
     }
 
     render() {
         return(
             <div>
                 <h2>Promo</h2>
-                <canvas id="canvasPromo" width="800" height="800"></canvas>
+                <canvas id="canvasPromo" width={this.canvasSize} height={this.canvasSize}></canvas>
                 <button onClick={this.draw}>Draw</button>
             </div>
         )
